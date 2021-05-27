@@ -1,0 +1,35 @@
+body {
+  background-color: rgb(226, 230, 9);
+  margin: 0;
+  padding: 0;
+  /* font-family: 'Fontdiner Swanky', cursive; */
+  font-family: 'VT323', monospace;
+  font-size: 2rem;
+}
+h1 {
+  margin: auto;
+}
+img {
+  width: 30%;
+  height: 30%;
+  border-left: 0.5rem solid black;
+  border-bottom: 0.5rem solid black;
+}
+
+.buttons {
+  width: 60%;
+  margin: auto;
+}
+.player {
+  padding: 10%;
+  margin: auto;
+}
+
+.total-scores {
+  /* position: absolute; */
+  display: flex;
+}
+.total {
+  border: 0.5rem solid black;
+  border-radius: 10%;
+}
