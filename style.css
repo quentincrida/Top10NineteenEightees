@@ -4,23 +4,42 @@ body {
   padding: 0;
   /* font-family: 'Fontdiner Swanky', cursive; */
   font-family: 'VT323', monospace;
-  font-size: 2rem;
 }
 h1 {
+  font-size: 5.5rem;
   margin: auto;
+}
+h1,
+p {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
 img {
   width: 30%;
   height: 30%;
   border-left: 0.5rem solid black;
   border-bottom: 0.5rem solid black;
+  margin-bottom: 3rem;
 }
 
+p {
+  font-size: 3rem;
+}
 .buttons {
   width: 60%;
   margin: auto;
+  text-align: center;
+}
+.button {
+  font-size: 2rem;
+}
+.btn-rules {
+  margin-left: 3rem;
 }
 .player {
+  font-size: 3rem;
   padding: 10%;
   margin: auto;
 }
@@ -32,4 +51,17 @@ img {
 .total {
   border: 0.5rem solid black;
   border-radius: 10%;
+}
+.current-score {
+  display: grid;
+  font-size: 3rem;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 4rem;
+}
+.current-score--0,
+.current-score--1 {
+  border: 0.5rem solid black;
+  border-radius: 12%;
+  margin: 2rem;
+  text-align: center;
 }
