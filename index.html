@@ -20,24 +20,31 @@
   <body>
     <h1>1980s Strikes and a gutter...</h1>
     <button class="button btn-rules">Rules</button>
+    <div>
+      <button class="button btn-reset">Reset</button>
+    </div>
     <p>Can you get to 0 First?</p>
     <main>
       <div class="total-scores">
-        <div class="player player--0">
+        <div class="player player--0 player--active">
           Player 1
-          <div class="total total--0">100</div>
+          <div class="total total--0">?</div>
         </div>
 
-        <img src="/images/1980sHits.jpg" alt="1980s Album image" />
+        <img
+          src="/images/1980sHits.jpg"
+          class="image"
+          alt="1980s Album image"
+        />
         <div class="player player--1">
           Player 2
-          <div class="total total--1">100</div>
+          <div class="total total--1">?</div>
         </div>
       </div>
       <section class="buttons">
         <button class="button btn-play">Play</button>
-        <button class="button">Pause</button>
-        <button class="button">Stop</button>
+        <button class="button btn-pause">Pause</button>
+        <button class="button btn-stop">Stop</button>
       </section>
       <section class="current-score">
         <div class="current-score--0">

@@ -1,7 +1,5 @@
 'use strict ';
 
-console.log('Hello World');
-
 const Song = function (name, band, position, points, image) {
   this.name = name;
   this.band = band;
@@ -98,4 +96,32 @@ const top10 = [
   joker,
 ];
 
-console.log(top10[1]);
+const player0El = document.querySelector('.player--0');
+const player1El = document.querySelector('.player--1');
+
+const total0El = document.querySelector('.total--0');
+const total1El = document.querySelector('.total--1');
+const current0El = document.querySelector('.current-score--0');
+const current1El = document.querySelector('.current-score--1');
+
+const imageEl = document.querySelector('.image');
+const btnRules = document.querySelector('.btn-rules');
+const btnReset = document.querySelector('.btn-rest');
+const btnPlay = document.querySelector('.btn-play');
+const btnPause = document.querySelector('.btn-pause');
+const btnStop = document.querySelector('.btn-stop');
+
+//Starting condtions
+let scores, playing, activePlayer, currentScore;
+
+const init = function () {
+  scores = [0, 0];
+  playing = true;
+  activePlayer = 0;
+  currentScore = 100;
+};
+
+//reset scores to 100;
+btnReset.addEventListener('click', fun);
+//shuffle the songs
+btnPlay.addEventListener('click', function () {});

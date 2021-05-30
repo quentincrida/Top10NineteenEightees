@@ -38,6 +38,10 @@ p {
 .btn-rules {
   margin-left: 3rem;
 }
+.btn-reset {
+  width: 10%;
+  margin: 5% 45% 5% 45%;
+}
 .player {
   font-size: 3rem;
   padding: 10%;
