@@ -74,7 +74,7 @@ const song10 = new Song(
   '/images/song10.jpg'
 );
 
-const song11 = new Song(
+const song0 = new Song(
   'Love Is Like A Butterfly',
   'Dolly Parton',
   0,
@@ -93,7 +93,7 @@ const top10 = [
   song8,
   song9,
   song10,
-  song11,
+  song0,
 ];
 
 const player0El = document.querySelector('.player--0');
@@ -107,6 +107,8 @@ const current1El = document.querySelector('.current-score--1');
 const imageEl = document.querySelector('.image');
 const songName = document.querySelector('.current-title');
 const bandName = document.querySelector('.current-band');
+const songPoints = document.querySelector('.current-song-points');
+const songPosition = document.querySelector('.current-song-position');
 
 const btnRules = document.querySelector('.btn-rules');
 const btnReset = document.querySelector('.btn-reset');
@@ -125,42 +127,61 @@ const init = function () {
 };
 init();
 
-//list first random song
-// const randomSong = top10[0];
-// // console.log(randomSong);
-// console.log(randomSong.position);
-
+const switchPlayer = function () {
+  //reset score to 100
+  // total0El.textContent = 100;
+  document.getElementsByClassName(`total--${activePlayer}`).textContent = 100;
+  currentScore = 100;
+  //switch players
+  activePlayer = activePlayer === 0 ? 1 : 0;
+  player0El.classList.toggle('player--active');
+  player1El.classList.toggle('player--active');
+  //   currentScore -= randomSong.points;
+  //   total0El.textContent = currentScore;
+  //   songName.textContent = randomSong.name;
+  //   bandName.textContent = randomSong.band;
+};
 //play button
 btnPlay.addEventListener('click', function () {
-  console.log('Play Button');
+  if (playing) {
+    //shuffle the songs
+    const shuffle = function (arr) {
+      for (let i = 0; i < arr.length; i++) {
+        let j = Math.floor(Math.random() * (i + 1));
+        const temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+      }
+    };
 
-  //shuffle the songs
-  const shuffle = function (arr) {
-    for (let i = 0; i < arr.length; i++) {
-      let j = Math.floor(Math.random() * (i + 1));
-      const temp = arr[i];
-      arr[i] = arr[j];
-      arr[j] = temp;
+    shuffle(top10);
+    //list first random song
+    const randomSong = top10[0];
+    imageEl.src = randomSong.image;
+
+    //if not song0, remove song points from current score
+
+    if (randomSong !== song0) {
+      currentScore -= randomSong.points;
+      total0El.textContent = currentScore;
+      // document.getElementsByClassName(`total--${activePlayer}`).textContent =
+      //   currentScore;
+
+      songName.textContent = randomSong.name;
+      bandName.textContent = randomSong.band;
+      songPoints.textContent = randomSong.points;
+      songPosition.textContent = randomSong.position;
+      current0El.textContent = randomSong.points;
+    } else {
+      console.log('Bad luck , you lose your points');
+      total0El.textContent = 100;
+      songName.textContent = song0.name;
+      bandName.textContent = song0.band;
+      songPoints.textContent = song0.points;
+      songPosition.textContent = song0.position;
+      current0El.textContent = 'JOKER';
+      switchPlayer();
     }
-  };
-  shuffle(top10);
-  //list first random song
-  const randomSong = top10[0];
-  imageEl.src = randomSong.image;
-
-  //if notsong11, remove song points from current score
-
-  if (randomSong !== song11) {
-    currentScore -= randomSong.points;
-    total0El.textContent = currentScore;
-    songName.textContent = randomSong.name;
-    bandName.textContent = randomSong.band;
-  } else {
-    //reset score to 100
-    total0El.textContent = 100;
-    total0El.classList.remove('player--active');
-    total1El.classList.add('player--active');
-    //switch players
   }
   console.log(randomSong);
 });
