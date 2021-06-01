@@ -27,6 +27,15 @@ img {
 p {
   font-size: 3rem;
 }
+table,
+th td {
+  border: 1px dotted black;
+  width: 30%;
+}
+tr {
+  border: 1px dotted black;
+  font-size: 2rem;
+}
 .buttons {
   width: 60%;
   margin: auto;
