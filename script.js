@@ -99,10 +99,10 @@ const top10 = [
 const player0El = document.querySelector('.player--0');
 const player1El = document.querySelector('.player--1');
 
-const total0El = document.querySelector('.total--0');
-const total1El = document.querySelector('.total--1');
-const current0El = document.querySelector('.current-score--0');
-const current1El = document.querySelector('.current-score--1');
+const total0El = document.querySelector('#total--0');
+const total1El = document.querySelector('#total--1');
+const current0El = document.querySelector('#current-score--0');
+const current1El = document.querySelector('#current-score--1');
 
 const imageEl = document.querySelector('.image');
 const songName = document.querySelector('.current-title');
@@ -120,7 +120,7 @@ const btnStop = document.querySelector('.btn-stop');
 let scores, currentScore, playing, activePlayer;
 
 const init = function () {
-  scores = [0, 0];
+  scores = [100, 100];
   currentScore = 100;
   playing = true;
   activePlayer = 0;
@@ -130,17 +130,14 @@ init();
 const switchPlayer = function () {
   //reset score to 100
   // total0El.textContent = 100;
-  document.getElementsByClassName(`total--${activePlayer}`).textContent = 100;
+  document.getElementById(`total--${activePlayer}`).textContent = 100;
   currentScore = 100;
   //switch players
   activePlayer = activePlayer === 0 ? 1 : 0;
   player0El.classList.toggle('player--active');
   player1El.classList.toggle('player--active');
-  //   currentScore -= randomSong.points;
-  //   total0El.textContent = currentScore;
-  //   songName.textContent = randomSong.name;
-  //   bandName.textContent = randomSong.band;
 };
+
 //play button
 btnPlay.addEventListener('click', function () {
   if (playing) {
@@ -163,25 +160,35 @@ btnPlay.addEventListener('click', function () {
 
     if (randomSong !== song0) {
       currentScore -= randomSong.points;
-      total0El.textContent = currentScore;
-      // document.getElementsByClassName(`total--${activePlayer}`).textContent =
-      //   currentScore;
+
+      document.getElementById(`total--${activePlayer}`).textContent =
+        currentScore;
 
       songName.textContent = randomSong.name;
       bandName.textContent = randomSong.band;
       songPoints.textContent = randomSong.points;
       songPosition.textContent = randomSong.position;
-      current0El.textContent = randomSong.points;
+
+      document.getElementById(`current-score--${activePlayer}`).textContent =
+        randomSong.points;
+      //declare a winner
+      if (scores[`${activePlayer}`] <= 0) {
+        playing = false;
+        console.log(`${activePlayer} WINS`);
+      }
     } else {
       console.log('Bad luck , you lose your points');
-      total0El.textContent = 100;
+      // total0El.textContent = 100;
+      document.getElementById(`total--${activePlayer}`).textContent = 100;
+
       songName.textContent = song0.name;
       bandName.textContent = song0.band;
       songPoints.textContent = song0.points;
       songPosition.textContent = song0.position;
-      current0El.textContent = 'JOKER';
+
+      document.getElementById(`current-score--${activePlayer}`).textContent =
+        'JOKER';
       switchPlayer();
     }
   }
-  console.log(randomSong);
 });
