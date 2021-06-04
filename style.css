@@ -51,6 +51,9 @@ tr {
   width: 10%;
   margin: 5% 45% 5% 45%;
 }
+.hidden {
+  opacity: 20%;
+}
 .player {
   font-size: 3rem;
   padding: 10%;
@@ -69,6 +72,7 @@ tr {
   display: grid;
   font-size: 3rem;
   grid-template-columns: 1fr 1fr;
+  padding: 0 10rem 0 10rem;
   margin-top: 4rem;
 }
 #current-score--0,

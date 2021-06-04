@@ -101,9 +101,14 @@ const player1El = document.querySelector('.player--1');
 
 const total0El = document.querySelector('#total--0');
 const total1El = document.querySelector('#total--1');
+
 const current0El = document.querySelector('#current-score--0');
 const current1El = document.querySelector('#current-score--1');
 
+const song0El = document.querySelector('.player0Song');
+const song1El = document.querySelector('.player1Song');
+
+//song details and image
 const imageEl = document.querySelector('.image');
 const songName = document.querySelector('.current-title');
 const bandName = document.querySelector('.current-band');
@@ -113,7 +118,7 @@ const songPosition = document.querySelector('.current-song-position');
 const btnRules = document.querySelector('.btn-rules');
 const btnReset = document.querySelector('.btn-reset');
 const btnPlay = document.querySelector('.btn-play');
-const btnPause = document.querySelector('.btn-pause');
+const btnSaveNSwitch = document.querySelector('.btn-save');
 const btnStop = document.querySelector('.btn-stop');
 
 //Starting condtions
@@ -129,13 +134,20 @@ init();
 
 const switchPlayer = function () {
   //reset score to 100
-  // total0El.textContent = 100;
+
   document.getElementById(`total--${activePlayer}`).textContent = 100;
   currentScore = 100;
+
   //switch players
+
   activePlayer = activePlayer === 0 ? 1 : 0;
+  //hold current score before switching players
+  // document.getElementById(`total--${activePlayer}`).textContent = currentScore;
   player0El.classList.toggle('player--active');
   player1El.classList.toggle('player--active');
+  //player visibilty swap
+  song0El.classList.toggle('hidden');
+  song1El.classList.toggle('hidden');
 };
 
 //play button
@@ -166,16 +178,13 @@ btnPlay.addEventListener('click', function () {
 
       songName.textContent = randomSong.name;
       bandName.textContent = randomSong.band;
-      songPoints.textContent = randomSong.points;
       songPosition.textContent = randomSong.position;
+
+      //update scores to reflect running total
 
       document.getElementById(`current-score--${activePlayer}`).textContent =
         randomSong.points;
       //declare a winner
-      if (scores[`${activePlayer}`] <= 0) {
-        playing = false;
-        console.log(`${activePlayer} WINS`);
-      }
     } else {
       console.log('Bad luck , you lose your points');
       // total0El.textContent = 100;
@@ -183,12 +192,24 @@ btnPlay.addEventListener('click', function () {
 
       songName.textContent = song0.name;
       bandName.textContent = song0.band;
-      songPoints.textContent = song0.points;
+
       songPosition.textContent = song0.position;
 
       document.getElementById(`current-score--${activePlayer}`).textContent =
         'JOKER';
       switchPlayer();
     }
+  }
+});
+
+btnSaveNSwitch.addEventListener('click', function () {
+  if (playing) {
+    //save current score of active player
+    scores[activePlayer] = document.getElementById(`total--${activePlayer}`);
+    document.getElementsByClassName(`current--${activePlayer}`).textContent =
+      scores[activePlayer];
+    // check if <= 0, is there a winner?
+    //switch players
+    switchPlayer();
   }
 });
