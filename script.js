@@ -99,11 +99,11 @@ const top10 = [
 const player0El = document.querySelector('.player--0');
 const player1El = document.querySelector('.player--1');
 
-const total0El = document.querySelector('#total--0');
-const total1El = document.querySelector('#total--1');
+const total0El = document.querySelector('#score--0');
+const total1El = document.querySelector('#score--1');
 
-const current0El = document.querySelector('#current-score--0');
-const current1El = document.querySelector('#current-score--1');
+const current0El = document.querySelector('#current--0');
+const current1El = document.querySelector('#current--1');
 
 const song0El = document.querySelector('.player0Song');
 const song1El = document.querySelector('.player1Song');
@@ -126,28 +126,37 @@ let scores, currentScore, playing, activePlayer;
 
 const init = function () {
   scores = [100, 100];
-  currentScore = 100;
+  currentScore = 0;
   playing = true;
   activePlayer = 0;
+
+  player0El.classList.add('player--active');
+  player1El.classList.remove('player--active');
 };
 init();
 
 const switchPlayer = function () {
-  //reset score to 100
-
-  document.getElementById(`total--${activePlayer}`).textContent = 100;
-  currentScore = 100;
+  //reset current score to 0
+  document.getElementById(`current--${activePlayer}`).textContent = 0;
+  // hold score
+  document.getElementById(`score--${activePlayer}`).textContent = currentScore;
 
   //switch players
-
   activePlayer = activePlayer === 0 ? 1 : 0;
-  //hold current score before switching players
-  // document.getElementById(`total--${activePlayer}`).textContent = currentScore;
+  document.getElementById(`current--${activePlayer}`).textContent = 0;
+  //reset current for new player
+  currentScore = 0;
+  // //hold current score before switching players
+  // document.getElementById(`score--${activePlayer}`).textContent = currentScore;
+
   player0El.classList.toggle('player--active');
   player1El.classList.toggle('player--active');
   //player visibilty swap
   song0El.classList.toggle('hidden');
   song1El.classList.toggle('hidden');
+
+  // document.getElementById(`score--${activePlayer}`).textContent =
+  //   `score--${activePlayer} `.currentScore;
 };
 
 //play button
@@ -171,45 +180,36 @@ btnPlay.addEventListener('click', function () {
     //if not song0, remove song points from current score
 
     if (randomSong !== song0) {
-      currentScore -= randomSong.points;
-
-      document.getElementById(`total--${activePlayer}`).textContent =
+      currentScore += randomSong.points;
+      document.getElementById(`current--${activePlayer}`).textContent =
         currentScore;
 
       songName.textContent = randomSong.name;
       bandName.textContent = randomSong.band;
       songPosition.textContent = randomSong.position;
-
-      //update scores to reflect running total
-
-      document.getElementById(`current-score--${activePlayer}`).textContent =
-        randomSong.points;
-      //declare a winner
+      songPoints.textContent = randomSong.points;
     } else {
-      console.log('Bad luck , you lose your points');
-      // total0El.textContent = 100;
-      document.getElementById(`total--${activePlayer}`).textContent = 100;
-
+      currentScore = 100;
+      // document.getElementById(`score--${activePlayer}`).textContent = 100;
+      document.getElementById(`current--${activePlayer}`).textContent = 0;
       songName.textContent = song0.name;
       bandName.textContent = song0.band;
-
+      songPoints.textContent = song0.points;
       songPosition.textContent = song0.position;
 
-      document.getElementById(`current-score--${activePlayer}`).textContent =
-        'JOKER';
+      document.getElementById(`current--${activePlayer}`).textContent = 'JOKER';
+
       switchPlayer();
     }
   }
 });
-
+//Save and Switch players btn
 btnSaveNSwitch.addEventListener('click', function () {
   if (playing) {
-    //save current score of active player
-    scores[activePlayer] = document.getElementById(`total--${activePlayer}`);
-    document.getElementsByClassName(`current--${activePlayer}`).textContent =
-      scores[activePlayer];
-    // check if <= 0, is there a winner?
-    //switch players
-    switchPlayer();
+    //subtract current from active players score
+    currentScore = scores[activePlayer] -= currentScore;
+    document.getElementById(`current--${activePlayer}`).textContent =
+      currentScore;
   }
+  switchPlayer();
 });
