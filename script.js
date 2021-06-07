@@ -149,6 +149,10 @@ const switchPlayer = function () {
   // //hold current score before switching players
   // document.getElementById(`score--${activePlayer}`).textContent = currentScore;
 
+  // TRYINGTO SET SCORES TO DISPLAY CORRECTLY AFTER SWITCH AFTER JOKER
+  document.getElementById(`score--${activePlayer}`).textContent =
+    scores[activePlayer];
+
   player0El.classList.toggle('player--active');
   player1El.classList.toggle('player--active');
   //player visibilty swap
@@ -157,6 +161,7 @@ const switchPlayer = function () {
 
   // document.getElementById(`score--${activePlayer}`).textContent =
   //   `score--${activePlayer} `.currentScore;
+  console.log(scores);
 };
 
 //play button
@@ -189,8 +194,11 @@ btnPlay.addEventListener('click', function () {
       songPosition.textContent = randomSong.position;
       songPoints.textContent = randomSong.points;
     } else {
-      currentScore = 100;
+      // currentScore = 100;
       // document.getElementById(`score--${activePlayer}`).textContent = 100;
+      scores[activePlayer] = 100;
+      document.getElementById(`score--${activePlayer}`).textContent =
+        scores[activePlayer];
       document.getElementById(`current--${activePlayer}`).textContent = 0;
       songName.textContent = song0.name;
       bandName.textContent = song0.band;
