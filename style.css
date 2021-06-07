@@ -1,12 +1,14 @@
 body {
   background-color: rgb(226, 230, 9);
-  margin: 20px;
+  margin: 100px;
   padding: 0;
-  /* font-family: 'Fontdiner Swanky', cursive; */
   font-family: 'VT323', monospace;
+  border-right: 5px solid black;
+  border-bottom: 10px solid black;
 }
 h1 {
   font-size: 5.5rem;
+  margin-top: 7.5%;
   margin: auto;
 }
 h1,
@@ -17,8 +19,8 @@ p {
   text-align: center;
 }
 img {
-  width: 300px;
-  height: 300px;
+  width: 500px;
+  height: 500px;
   border-left: 0.5rem solid black;
   border-bottom: 0.5rem solid black;
   margin-bottom: 3rem;
@@ -29,15 +31,19 @@ li {
   font-size: 3rem;
 }
 
-table,
-th td {
-  border: 1px dotted black;
-  width: 100%;
-}
-tr {
-  border: 1px dotted black;
+table {
+  border-top: 0.5rem solid black;
+  border-right: 0.5rem solid black;
   font-size: 2rem;
+  width: 50%;
+  height: 12%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
+  text-align: justify;
+  table-layout: fixed;
 }
+
 .button {
   font-size: 2rem;
   font-family: 'VT323', monospace;
@@ -69,13 +75,17 @@ tr {
   margin: 5% 45% 5% 45%;
 }
 .opacity {
-  transition-duration: 0.5s;
   opacity: 20%;
 }
 .player {
   font-size: 3rem;
   padding: 10%;
   margin: auto;
+}
+.winner {
+  /* display: none; */
+  background-color: black;
+  color: red;
 }
 .rules {
   text-align: justify;

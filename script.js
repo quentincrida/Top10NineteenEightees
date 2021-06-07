@@ -133,16 +133,28 @@ const init = function () {
   playing = true;
   activePlayer = 0;
 
-  rules.classList.add('hidden');
+  // rules.classList.add('hidden');
 
   player0El.classList.add('player--active');
   player1El.classList.remove('player--active');
+
+  player0El.classList.remove('winner');
+  player1El.classList.remove('winner');
+
+  imageEl.src = './images/1980sHits.jpg';
+  songName.textContent = '?';
+  bandName.textContent = '?';
+  songPoints.textContent = '?';
+  songPosition.textContent = '?';
 
   total0El.textContent = 100;
   total1El.textContent = 100;
 
   current0El.textContent = 0;
   current1El.textContent = 0;
+
+  song0El.classList.remove('opacity');
+  song1El.classList.add('opacity');
 };
 init();
 
@@ -231,6 +243,9 @@ btnSaveNSwitch.addEventListener('click', function () {
       scores[activePlayer] = 'WINNER';
       document.getElementById(`score--${activePlayer}`).textContent =
         scores[activePlayer];
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.add('winner');
     }
   }
 
