@@ -34,7 +34,7 @@ li {
 table {
   border-top: 0.5rem solid black;
   border-right: 0.5rem solid black;
-  font-size: 2rem;
+  font-size: 3rem;
   width: 50%;
   height: 12%;
   margin-left: auto;
@@ -45,7 +45,7 @@ table {
 }
 
 .button {
-  font-size: 2rem;
+  font-size: 3rem;
   font-family: 'VT323', monospace;
 }
 .buttons {
@@ -79,13 +79,37 @@ table {
 }
 .player {
   font-size: 3rem;
-  padding: 10%;
+  /* padding: 10%; */
   margin: auto;
+}
+.player--0 {
+  border-right: 0.5rem solid black;
+  border-bottom: 0.5rem solid black;
+  padding-right: 1rem;
+}
+
+.player--1 {
+  border-left: 0.5rem solid black;
+  border-bottom: 0.5rem solid black;
+  padding-left: 1rem;
+}
+.player0Song {
+  text-align: right;
+  padding-right: 1rem;
+  border-right: 0.5rem solid black;
+  border-top: 0.5rem solid black;
+}
+.player1Song {
+  text-align: left;
+  padding-left: 1rem;
+  border-top: 0.5rem solid black;
 }
 .winner {
   /* display: none; */
   background-color: black;
   color: red;
+  font-size: 6rem;
+  border: none;
 }
 .rules {
   text-align: justify;
@@ -103,7 +127,9 @@ table {
   font-size: 3rem;
   grid-template-columns: 1fr 1fr;
   padding: 0 10rem 0 10rem;
+  margin: auto;
   margin-top: 4rem;
+  width: 20%;
 }
 #current-score--0,
 #current-score--1 {
