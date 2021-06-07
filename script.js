@@ -252,5 +252,11 @@ const closeRules = function () {
 };
 btnCloseRules.addEventListener('click', closeRules);
 overlay.addEventListener('click', closeRules);
+//use Escape key to close rules window when rules are not hidden
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    if (!rules.classList.contains('hidden')) closeRules();
+  }
+});
 
 btnReset.addEventListener('click', init);
