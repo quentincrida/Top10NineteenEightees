@@ -95,6 +95,11 @@ const top10 = [
   song10,
   song0,
 ];
+//Rules Window
+const rules = document.querySelector('.rules');
+const overlay = document.querySelector('.overlay');
+const btnRules = document.querySelector('.btn-rules');
+const btnCloseRules = document.querySelector('.btn-close-rules');
 
 const player0El = document.querySelector('.player--0');
 const player1El = document.querySelector('.player--1');
@@ -115,8 +120,6 @@ const bandName = document.querySelector('.current-band');
 const songPoints = document.querySelector('.current-song-points');
 const songPosition = document.querySelector('.current-song-position');
 
-const btnRules = document.querySelector('.btn-rules');
-const btnCloseRules = document.querySelector('.btn-close-rules');
 const btnReset = document.querySelector('.btn-reset');
 const btnPlay = document.querySelector('.btn-play');
 const btnSaveNSwitch = document.querySelector('.btn-save');
@@ -129,6 +132,8 @@ const init = function () {
   currentScore = 0;
   playing = true;
   activePlayer = 0;
+
+  rules.classList.add('hidden');
 
   player0El.classList.add('player--active');
   player1El.classList.remove('player--active');
@@ -162,8 +167,8 @@ const switchPlayer = function () {
   player0El.classList.toggle('player--active');
   player1El.classList.toggle('player--active');
   //player visibilty swap
-  song0El.classList.toggle('hidden');
-  song1El.classList.toggle('hidden');
+  song0El.classList.toggle('opacity');
+  song1El.classList.toggle('opacity');
 
   console.log(scores);
 };
@@ -231,5 +236,21 @@ btnSaveNSwitch.addEventListener('click', function () {
 
   switchPlayer();
 });
+
+//setting up Rules Window
+//Rules Window
+
+const openRules = function () {
+  rules.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+btnRules.addEventListener('click', openRules);
+
+const closeRules = function () {
+  rules.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+btnCloseRules.addEventListener('click', closeRules);
+overlay.addEventListener('click', closeRules);
 
 btnReset.addEventListener('click', init);
