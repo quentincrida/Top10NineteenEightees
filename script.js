@@ -77,8 +77,8 @@ const song10 = new Song(
 const song0 = new Song(
   'Love Is Like A Butterfly',
   'Dolly Parton',
-  0,
-  0,
+  'JOKER',
+  'JOKER',
   '/images/song11.jpg'
 );
 
@@ -116,10 +116,10 @@ const songPoints = document.querySelector('.current-song-points');
 const songPosition = document.querySelector('.current-song-position');
 
 const btnRules = document.querySelector('.btn-rules');
+const btnCloseRules = document.querySelector('.btn-close-rules');
 const btnReset = document.querySelector('.btn-reset');
 const btnPlay = document.querySelector('.btn-play');
 const btnSaveNSwitch = document.querySelector('.btn-save');
-const btnStop = document.querySelector('.btn-stop');
 
 //Starting condtions
 let scores, currentScore, playing, activePlayer;
@@ -132,6 +132,12 @@ const init = function () {
 
   player0El.classList.add('player--active');
   player1El.classList.remove('player--active');
+
+  total0El.textContent = 100;
+  total1El.textContent = 100;
+
+  current0El.textContent = 0;
+  current1El.textContent = 0;
 };
 init();
 
@@ -139,17 +145,17 @@ const switchPlayer = function () {
   //reset current score to 0
   document.getElementById(`current--${activePlayer}`).textContent = 0;
   // hold score
-  document.getElementById(`score--${activePlayer}`).textContent = currentScore;
-
+  // document.getElementById(`score--${activePlayer}`).textContent = currentScore;
+  document.getElementById(`score--${activePlayer}`).textContent =
+    scores[activePlayer];
   //switch players
   activePlayer = activePlayer === 0 ? 1 : 0;
   document.getElementById(`current--${activePlayer}`).textContent = 0;
   //reset current for new player
   currentScore = 0;
   // //hold current score before switching players
-  // document.getElementById(`score--${activePlayer}`).textContent = currentScore;
 
-  // TRYINGTO SET SCORES TO DISPLAY CORRECTLY AFTER SWITCH AFTER JOKER
+  // TRYING TO SET SCORES TO DISPLAY CORRECTLY AFTER SWITCH AFTER JOKER
   document.getElementById(`score--${activePlayer}`).textContent =
     scores[activePlayer];
 
@@ -159,8 +165,6 @@ const switchPlayer = function () {
   song0El.classList.toggle('hidden');
   song1El.classList.toggle('hidden');
 
-  // document.getElementById(`score--${activePlayer}`).textContent =
-  //   `score--${activePlayer} `.currentScore;
   console.log(scores);
 };
 
@@ -194,18 +198,16 @@ btnPlay.addEventListener('click', function () {
       songPosition.textContent = randomSong.position;
       songPoints.textContent = randomSong.points;
     } else {
-      // currentScore = 100;
-      // document.getElementById(`score--${activePlayer}`).textContent = 100;
+      document.getElementById(`current--${activePlayer}`).textContent = 0;
+
       scores[activePlayer] = 100;
       document.getElementById(`score--${activePlayer}`).textContent =
         scores[activePlayer];
-      document.getElementById(`current--${activePlayer}`).textContent = 0;
+
       songName.textContent = song0.name;
       bandName.textContent = song0.band;
       songPoints.textContent = song0.points;
       songPosition.textContent = song0.position;
-
-      document.getElementById(`current--${activePlayer}`).textContent = 'JOKER';
 
       switchPlayer();
     }
@@ -218,6 +220,16 @@ btnSaveNSwitch.addEventListener('click', function () {
     currentScore = scores[activePlayer] -= currentScore;
     document.getElementById(`current--${activePlayer}`).textContent =
       currentScore;
+    //declare a winner if score <= 0
+    if (scores[activePlayer] <= 0) {
+      playing = false;
+      scores[activePlayer] = 'WINNER';
+      document.getElementById(`score--${activePlayer}`).textContent =
+        scores[activePlayer];
+    }
   }
+
   switchPlayer();
 });
+
+btnReset.addEventListener('click', init);
