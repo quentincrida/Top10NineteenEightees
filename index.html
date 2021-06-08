@@ -19,7 +19,13 @@
   </head>
   <body>
     <h1>1980s Strikes and a gutter...</h1>
-    <button class="button btn-rules">Rules</button>
+    <div class="top-buttons">
+      <button class="button btn-rules">Rules</button>
+      <button class="button btn-reset">Reset</button>
+
+
+    </div>
+  
     <div class="rules hidden">
       <button class=" button btn-close-rules">&times;</button>
       <h1>Rules of Play</h1>
@@ -38,10 +44,8 @@
       </p>
     </div>
     <div class="overlay hidden"></div>
-    <div>
-      <button class="button btn-reset">Reset</button>
-    </div>
     <p>Can you get to 0 First?</p>
+  
     <main>
       <div class="total-scores">
         <div class="player player--0 player--active winner">
@@ -79,11 +83,11 @@
           </tr>
         </table>
       </div>
-      <section class="buttons">
+      <section class="bottom-buttons">
         <button class="button btn-play">Play</button>
         <button class="button btn-save">Save & Switch</button>
       </section>
-      <section class="current-score">
+      <div class="current-score">
         <div class="player0Song">
           Player 1
           <div id="current--0"><span>Points off current: </span>?</div>
@@ -92,7 +96,8 @@
           Player 2
           <div id="current--1"><span>Points off current: </span>?</div>
         </div>
-      </section>
+      </div>
+      <footer>Quentin Crida 2021</footer>
     </main>
 
     <script src="script.js"></script>
