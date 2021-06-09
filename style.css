@@ -299,19 +299,43 @@ footer {
     margin-left: 0;
     border: none;
   }
+  /* .rules {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: auto;
+    font-size: 2px;
+
+    color: rgb(226, 230, 9);
+    background-color: black;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  } */
 
   .rules {
-    height: 90%;
-    width: 90%;
-    padding: 12px;
+    position: absolute;
+    top: 75%;
+    right: 145%;
+    height: 120%;
+    width: 95%;
+    padding: 0;
     text-align: left;
+    background-size: 100%;
   }
   .rules h1 {
     font-size: 2rem;
   }
-  .rules p {
-    padding-top: 0;
+  .rules li,
+  p {
+    /* padding-top: 0;
     padding-bottom: 0;
+    font-size: auto; */
+    padding: 0 2px 0 2px;
   }
   .winner {
     background-color: black;
