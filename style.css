@@ -214,7 +214,6 @@ footer {
   .player--1 {
     margin-left: 80px;
   }
-  
 
   .rules {
     height: 75%;
@@ -239,13 +238,12 @@ footer {
     height: 100px;
     width: 100px;
     margin-bottom: 10px;
-   
   }
   table {
     width: 100%;
     border-top: 3px solid black;
     border-right: none;
-    border-bottom: 3px solid black
+    border-bottom: 3px solid black;
   }
   th {
     font-size: 15px;
@@ -264,74 +262,75 @@ footer {
   .btn-rules {
     width: 75px;
   }
-  .buttons-top, .buttons-bottom {
+  .buttons-top,
+  .buttons-bottom {
     display: flex;
   }
-  .btn-rules, .btn-play{
+  .btn-rules,
+  .btn-play {
     margin-left: 5px;
   }
   .btn-reset {
     margin-right: 5px;
   }
-/* .button {
+  /* .button {
   margin:auto;
 } */
-  
+
   .image {
-    border-left:3px solid black;
+    border-left: 3px solid black;
     border-bottom: 3px solid black;
   }
-  }
-  .player--0 {
-    margin-right: 0;
-   border: none;
-  }
-  .player--1 {
-    margin-left: 0;
-    border: none;
-  }
+}
+.player--0 {
+  margin-right: 0;
+  border: none;
+}
+.player--1 {
+  margin-left: 0;
+  border: none;
+}
 
-  .rules {
-    height: 80%;
-    width: 90%;
-    padding: 12px;
-    text-align: left;
-  }
-  .rules h1 {
-    font-size: 2rem;
-  }
-  .winner {
-    background-color: black;
-    color: red;
-    font-size: 2rem;
-    border: none;
-    border-right: 2px solid rgb(226, 230, 9);
-    border-left: 2px solid  rgb(226, 230, 9);
-    margin: 0 0 10px 0;
-    text-align: center;
-    padding: 5px 5px 0 5px;;
-  }
+.rules {
+  height: 80%;
+  width: 90%;
+  padding: 12px;
+  text-align: left;
+}
+.rules h1 {
+  font-size: 2rem;
+}
+.winner {
+  background-color: black;
+  color: red;
+  font-size: 2rem;
+  border: none;
+  border-right: 2px solid rgb(226, 230, 9);
+  border-left: 2px solid rgb(226, 230, 9);
+  margin: 0 0 10px 0;
+  text-align: center;
+  padding: 5px 5px 0 5px;
+}
 
-  .current-score {
-    margin-top: 1rem;
-    margin-bottom: 1.5rem;
-    width: 100%;
-    padding: 5px;
-  }
-  .player0Song {
-    font-size: 2rem;
-    text-align: right;
-    padding-right: 1rem;
-    border-right: 3px solid black;
-    border-top: 3px solid black;
-  }
-  .player1Song {
-    font-size: 2rem;
-    text-align: left;
-    padding-left: 1rem;
-    border-top: 3px solid black;
-  }
-  footer {
-    text-align: left;
-  }
+.current-score {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  padding: 5px;
+}
+.player0Song {
+  font-size: 2rem;
+  text-align: right;
+  padding-right: 1rem;
+  border-right: 3px solid black;
+  border-top: 3px solid black;
+}
+.player1Song {
+  font-size: 2rem;
+  text-align: left;
+  padding-left: 1rem;
+  border-top: 3px solid black;
+}
+footer {
+  text-align: left;
 }
