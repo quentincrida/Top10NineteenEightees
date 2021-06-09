@@ -13,14 +13,14 @@ const song1 = new Song(
   'The Police',
   1,
   10,
-  '/images/song1.jpg'
+  './images/song1.jpg'
 );
 const song2 = new Song(
   'The Eye Of The Tiger',
   'Survivor',
   2,
   9,
-  '/images/song2.jpg'
+  './images/song2.jpg'
 );
 
 const song3 = new Song(
@@ -28,26 +28,26 @@ const song3 = new Song(
   'Foreigner',
   3,
   8,
-  '/images/song3.jpg'
+  './images/song3.jpg'
 );
 
-const song4 = new Song('Jump', 'van Halen', 4, 7, '/images/song4.jpg');
+const song4 = new Song('Jump', 'van Halen', 4, 7, './images/song4.jpg');
 
-const song5 = new Song('With Or Without You', 'U2', 5, 6, '/images/song5.jpg');
+const song5 = new Song('With Or Without You', 'U2', 5, 6, './images/song5.jpg');
 
 const song6 = new Song(
   "Sweet Child O' Mine",
   "Guns N' Roses",
   6,
   5,
-  '/images/song6.jpg'
+  './images/song6.jpg'
 );
 const song7 = new Song(
   'So Emotional',
   'Whitney Houston',
   7,
   4,
-  '/images/song7.jpg'
+  './images/song7.jpg'
 );
 
 const song8 = new Song(
@@ -55,7 +55,7 @@ const song8 = new Song(
   'Bonnie Tyler',
   8,
   3,
-  '/images/song8.jpg'
+  './images/song8.jpg'
 );
 
 const song9 = new Song(
@@ -63,7 +63,7 @@ const song9 = new Song(
   'Lional Ritchie & Diana Ross',
   9,
   2,
-  '/images/song9.jpg'
+  './images/song9.jpg'
 );
 
 const song10 = new Song(
@@ -71,7 +71,7 @@ const song10 = new Song(
   'J. Geils Band',
   10,
   1,
-  '/images/song10.jpg'
+  './images/song10.jpg'
 );
 
 const song0 = new Song(
@@ -79,7 +79,7 @@ const song0 = new Song(
   'Dolly Parton',
   'JOKER',
   'JOKER',
-  '/images/song11.jpg'
+  './images/song11.jpg'
 );
 
 const top10 = [
