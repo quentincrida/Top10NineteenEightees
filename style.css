@@ -179,14 +179,14 @@ footer {
 }
 
 /* LARGE */
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1367px) {
   .current-score {
     width: 40%;
   }
 }
 
 /* MEDIUM*/
-@media only screen and (min-width: 701px) and (max-width: 1000px) {
+@media only screen and (min-width: 701px) and (max-width: 1366px) {
   body {
     padding: 30px;
     font-size: 20px;
@@ -242,9 +242,7 @@ footer {
     width: 100px;
     margin-bottom: 10px;
   }
-  section {
-    height: 33%;
-  }
+
   table {
     width: 100%;
     border-top: 3px solid black;
@@ -310,6 +308,10 @@ footer {
   }
   .rules h1 {
     font-size: 2rem;
+  }
+  .rules p {
+    padding-top: 0;
+    padding-bottom: 0;
   }
   .winner {
     background-color: black;
