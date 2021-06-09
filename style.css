@@ -58,7 +58,7 @@ footer {
   font-family: 'VT323', monospace;
 }
 
-.bottom-buttons {
+.buttons-bottom {
   width: 60%;
   margin: auto;
   text-align: center;
@@ -66,7 +66,6 @@ footer {
 
 .btn-rules {
   margin-left: 200px;
-  width: 6%;
 }
 .btn-reset {
   margin: auto;
@@ -90,7 +89,6 @@ footer {
 }
 .player {
   font-size: 2rem;
-  /* padding: 10%; */
   margin: auto;
 }
 .player--0 {
@@ -120,7 +118,6 @@ footer {
   border-top: 0.5rem solid black;
 }
 .winner {
-  /* display: none; */
   background-color: black;
   color: red;
   font-size: 6rem;
@@ -207,7 +204,7 @@ footer {
   .btn-rules {
     width: 75px;
   }
-  .top-buttons {
+  .buttons-top {
     display: flex;
   }
   .player--0 {
@@ -217,6 +214,7 @@ footer {
   .player--1 {
     margin-left: 80px;
   }
+  
 
   .rules {
     height: 75%;
@@ -227,8 +225,113 @@ footer {
   footer {
     text-align: left;
   }
+}
+/* SMALL */
+@media only screen and (min-width: 360px) and (max-width: 700px) {
+  body {
+    padding: 5px;
+    font-size: 10px;
+    text-align: center;
+    border: none;
+  }
 
-  /* SMALL */
-  @media only screen and (min-width: 360px) and (max-width: 700px) {
+  img {
+    height: 100px;
+    width: 100px;
+    margin-bottom: 10px;
+   
+  }
+  table {
+    width: 100%;
+    border-top: 3px solid black;
+    border-right: none;
+    border-bottom: 3px solid black
+  }
+  th {
+    font-size: 15px;
+    width: 20%;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  p {
+    font-size: 2rem;
+  }
+  .button {
+    font-size: 24px;
+  }
+
+  .btn-rules {
+    width: 75px;
+  }
+  .buttons-top, .buttons-bottom {
+    display: flex;
+  }
+  .btn-rules, .btn-play{
+    margin-left: 5px;
+  }
+  .btn-reset {
+    margin-right: 5px;
+  }
+/* .button {
+  margin:auto;
+} */
+  
+  .image {
+    border-left:3px solid black;
+    border-bottom: 3px solid black;
+  }
+  }
+  .player--0 {
+    margin-right: 0;
+   border: none;
+  }
+  .player--1 {
+    margin-left: 0;
+    border: none;
+  }
+
+  .rules {
+    height: 80%;
+    width: 90%;
+    padding: 12px;
+    text-align: left;
+  }
+  .rules h1 {
+    font-size: 2rem;
+  }
+  .winner {
+    background-color: black;
+    color: red;
+    font-size: 2rem;
+    border: none;
+    border-right: 2px solid rgb(226, 230, 9);
+    border-left: 2px solid  rgb(226, 230, 9);
+    margin: 0 0 10px 0;
+    text-align: center;
+    padding: 5px 5px 0 5px;;
+  }
+
+  .current-score {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    padding: 5px;
+  }
+  .player0Song {
+    font-size: 2rem;
+    text-align: right;
+    padding-right: 1rem;
+    border-right: 3px solid black;
+    border-top: 3px solid black;
+  }
+  .player1Song {
+    font-size: 2rem;
+    text-align: left;
+    padding-left: 1rem;
+    border-top: 3px solid black;
+  }
+  footer {
+    text-align: left;
   }
 }
