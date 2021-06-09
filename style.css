@@ -242,11 +242,15 @@ footer {
     width: 100px;
     margin-bottom: 10px;
   }
+  section {
+    height: 33%;
+  }
   table {
     width: 100%;
     border-top: 3px solid black;
     border-right: none;
     border-bottom: 3px solid black;
+    margin-bottom: 3rem;
   }
   th {
     font-size: 15px;
@@ -254,9 +258,13 @@ footer {
   }
   h1 {
     font-size: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
   p {
     font-size: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
   }
   .button {
     font-size: 24px;
@@ -280,6 +288,9 @@ footer {
   .image {
     border-left: 3px solid black;
     border-bottom: 3px solid black;
+  }
+  .player {
+    padding-bottom: 3rem;
   }
 
   .player--0 {
@@ -316,6 +327,8 @@ footer {
     margin-top: 1rem;
     margin-bottom: 1.5rem;
     width: 100%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     padding: 5px;
   }
   .player0Song {
